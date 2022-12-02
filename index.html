@@ -13,7 +13,34 @@
     <h1>The MarioKart Quiz!</h1>
   </header>
   <main>
-    <p>This is where the questions will go</p>
+    <aside>
+      <h2 id="timer"></h2>
+    </aside>
+    <section id="question-wrapper" hidden="true">
+      <h2 id="q-title"></h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="opt1">
+          <label for="opt1"></label>
+        </li>
+        <li>
+          <input type="checkbox" id="opt2">
+          <label for="opt2"></label>
+        </li>
+        <li>
+          <input type="checkbox" id="opt3">
+          <label for="opt3"></label> 
+        </li>
+        <li>
+          <input type="checkbox" id="opt4">
+          <label for="opt4"></label>
+        </li>
+      </ul>
+    </section>
+    <div id="button-wrapper">
+      <button id="start-quiz">Start Quiz</button>
+      <button id="view-scores">View High Scores</button>
+    </div>
   </main>
 </body>
 </html>
