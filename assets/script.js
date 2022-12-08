@@ -4,15 +4,16 @@ var questionWrapper = document.getElementById("question-wrapper");
 var questionTitle = document.getElementById("q-title");
 var options = document.querySelectorAll("input");
 var labels = document.querySelectorAll("label");
+var buttonWrapper = document.getElementById("button-wrapper");
+var timerDisplay = document.getElementById("timer");
+var scoreListElement = document.getElementById("score-list");
+var scoresWrapper = document.getElementById("scores-wrapper");
+var clearScoreButton = document.getElementById("clear-scores");
 const startingScore = 30;
 var gameScore = startingScore;
 var gameInterval;
 var questionIndex = 0;
-var buttonWrapper = document.getElementById("button-wrapper");
-var timerDisplay = document.getElementById("timer");
 var highScores = [];
-var scoreListElement = document.getElementById("score-list");
-var scoresWrapper = document.getElementById("scores-wrapper");
 var gameOver = false;
 
 var questions = [
@@ -90,7 +91,7 @@ function handleQuestionAnswered(e) {
 }
 
 function endGame() {
-  //record and store score
+  //clear the game interval, push score to array & then update localstorage
   clearInterval(gameInterval);
   let name = prompt("Enter your name to record your score!") || "AAA";
   highScores.push({name, gameScore});
@@ -99,12 +100,21 @@ function endGame() {
   buttonWrapper.hidden = false;
   timerDisplay.hidden = true;
   highScoreButton.disabled = false;
+
+  viewHighScores();
 }
 
 function viewHighScores() {
   //iterate and display top N scores
   highScoreButton.disabled = true;
-  for (let i = 0; i < highScores.length; i++) {
+
+  //sort scores
+  highScores.sort((a,b) => {
+    return (b.gameScore - a.gameScore)
+  })
+  
+  //display the top 10
+  for (let i = 0; i < highScores.length && i < 10; i++) {
     let scoreItem = document.createElement('li');
     scoreItem.textContent = `${highScores[i].name}: ${highScores[i].gameScore}`;
     scoreListElement.append(scoreItem);
@@ -121,6 +131,12 @@ function loadData() {
   }
 }
 
+function clearScores() {
+  highScores = [];
+  localStorage.removeItem("highscores");
+}
+
 loadData();
 startButton.addEventListener("click", startGame);
 highScoreButton.addEventListener("click", viewHighScores);
+clearScoreButton.addEventListener("click", clearScores);

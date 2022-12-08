@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles.css">
-  <script defer src="./assets/script.js"></script>
-  <title>Myles MarioKart Quiz</title>
-</head>
-<body>
-  <header>
-    <h1>The MarioKart Quiz!</h1>
-  </header>
-  <main>
-    <aside>
-      <h2 id="timer"></h2>
-    </aside>
-    <section id="question-wrapper" hidden="true">
-      <h2 id="q-title"></h2>
-      <ul>
-        <li>
-          <input type="checkbox" id="opt1">
-          <label for="opt1"></label>
-        </li>
-        <li>
-          <input type="checkbox" id="opt2">
-          <label for="opt2"></label>
-        </li>
-        <li>
-          <input type="checkbox" id="opt3">
-          <label for="opt3"></label> 
-        </li>
-        <li>
-          <input type="checkbox" id="opt4">
-          <label for="opt4"></label>
-        </li>
-      </ul>
-    </section>
-    <section id="scores-wrapper" hidden="true">
-      <ul id="score-list">
-
-      </ul>
-    </section>
-    <div id="button-wrapper">
-      <button id="start-quiz">Start Quiz</button>
-      <button id="view-scores">View High Scores</button>
-    </div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script defer src="./assets/script.js"></script>
+    <title>Myles MarioKart Quiz</title>
+  </head>
+  <body>
+    <header>
+      <h1>The MarioKart Quiz!</h1>
+    </header>
+    <main>
+      <aside>
+        <h2 id="timer"></h2>
+      </aside>
+      <section id="question-wrapper" hidden="true">
+        <h2 id="q-title"></h2>
+        <ul>
+          <li>
+            <input type="checkbox" id="opt1" />
+            <label for="opt1"></label>
+          </li>
+          <li>
+            <input type="checkbox" id="opt2" />
+            <label for="opt2"></label>
+          </li>
+          <li>
+            <input type="checkbox" id="opt3" />
+            <label for="opt3"></label>
+          </li>
+          <li>
+            <input type="checkbox" id="opt4" />
+            <label for="opt4"></label>
+          </li>
+        </ul>
+      </section>
+      <section id="scores-wrapper" hidden="true">
+        <ol id="score-list"></ol>
+      </section>
+      <div id="button-wrapper">
+        <button id="start-quiz">Start Quiz</button>
+        <button id="view-scores">View High Scores</button>
+        <button id="clear-scores">Clear High Scores</button>
+      </div>
+    </main>
+  </body>
 </html>

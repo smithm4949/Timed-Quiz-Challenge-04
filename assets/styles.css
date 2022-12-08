@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+aside {
+  position: absolute;
+  width: 10%;
+  height: 0px;
+  right: 0px;
+}
+
+header {
+  text-align: center;
+}
+
+#button-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
